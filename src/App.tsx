@@ -1,26 +1,77 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Chart from "react-google-charts";
+import { CSVReader } from "react-papaparse";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface Record {
+  data: string[];
 }
 
-export default App;
+interface Task {
+  name: string;
+  start: Date;
+  end: Date;
+}
+
+const strToDate = (str: string): Date => {
+  var arr = str.split(":");
+  var hrs = Number(arr[0]);
+  var mns = Number(arr[1]);
+  var sec = Number(arr[2]);
+
+  return new Date(0, 0, 0, hrs, mns, sec);
+};
+
+export default class App extends React.Component<{}, { tasks: Task[] }> {
+  handleOnDrop = (records: Record[]) => {
+    records.shift(); // remove header
+
+    console.log(records);
+    const tasks = records
+      .filter((r) => r.data.length > 1)
+      .map(
+        (r): Task => ({
+          name: r.data[1],
+          start: strToDate(r.data[3]),
+          end: strToDate(r.data[4]),
+        })
+      );
+
+    this.setState({ tasks });
+  };
+
+  handleOnError = (err: any, _: any, __: any, ___: any) => {
+    console.log(err);
+  };
+
+  render() {
+    return (
+      <div style={{ padding: "2vh" }}>
+        {!this.state?.tasks ? (
+          <CSVReader
+            addRemoveButton
+            onDrop={this.handleOnDrop}
+            onError={this.handleOnError}
+          >
+            <span>Drop CSV file here.</span>
+          </CSVReader>
+        ) : (
+          <Chart
+            width={"100%"}
+            height={"96vh"}
+            chartType="Timeline"
+            loader={<div>Loading Chart</div>}
+            data={[
+              [
+                { type: "string", id: "Name" },
+                { type: "date", id: "Start" },
+                { type: "date", id: "End" },
+              ],
+              ...this.state.tasks.map((t) => [t.name, t.start, t.end]),
+            ]}
+          />
+        )}
+      </div>
+    );
+  }
+}
