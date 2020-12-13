@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Chart from "react-google-charts";
 import { CSVReader } from "react-papaparse";
 
