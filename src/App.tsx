@@ -1,12 +1,13 @@
 import React from "react";
-import Chart from "react-google-charts";
 import { CSVReader } from "react-papaparse";
+import ReactApexChart from "react-apexcharts";
 
 interface Record {
   data: string[];
 }
 
 interface Task {
+  worker: string;
   name: string;
   start: Date;
   end: Date;
@@ -21,53 +22,76 @@ const strToDate = (str: string): Date => {
   return new Date(0, 0, 0, hrs, mns, sec);
 };
 
+const tasksToSeries = (tasks: Task[]) => {
+  const groups = tasks.reduce((acc: { [key: string]: Task[] }, task) => {
+    acc[task.name] = [...(acc[task.name] || []), task];
+    return acc;
+  }, {});
+
+  var series = Object.keys(groups).map((key) => ({
+    name: key,
+    data: groups[key].map((t) => ({
+      x: t.worker.toString(),
+      y: [t.start.getTime(), t.end.getTime()],
+    })),
+  }));
+
+  return series.sort((a, b) => ("" + a.name).localeCompare(b.name));
+};
 export default class App extends React.Component<{}, { tasks: Task[] }> {
+  options = {
+    chart: {
+      height: 1000,
+      type: "rangeBar",
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        barHeight: "50%",
+        rangeBarGroupRows: true,
+      },
+    },
+    fill: { type: "solid" },
+    xaxis: {
+      type: "datetime",
+      labels: { format: "HH:mm:ss" },
+    },
+    legend: { position: "right" },
+    tooltip: {
+      x: { format: "HH:mm:ss" },
+    },
+  };
+
   handleOnDrop = (records: Record[]) => {
     records.shift(); // remove header
 
-    console.log(records);
     const tasks = records
       .filter((r) => r.data.length > 1)
       .map(
         (r): Task => ({
-          name: r.data[1],
-          start: strToDate(r.data[3]),
-          end: strToDate(r.data[4]),
+          worker: r.data[0],
+          name: r.data[2],
+          start: strToDate(r.data[4]),
+          end: strToDate(r.data[5]),
         })
       );
 
     this.setState({ tasks });
   };
 
-  handleOnError = (err: any, _: any, __: any, ___: any) => {
-    console.log(err);
-  };
-
   render() {
     return (
-      <div style={{ padding: "2vh" }}>
+      <div>
         {!this.state?.tasks ? (
-          <CSVReader
-            addRemoveButton
-            onDrop={this.handleOnDrop}
-            onError={this.handleOnError}
-          >
+          <CSVReader addRemoveButton onDrop={this.handleOnDrop}>
             <span>Drop CSV file here.</span>
           </CSVReader>
         ) : (
-          <Chart
-            width={"100%"}
-            height={"96vh"}
-            chartType="Timeline"
-            loader={<div>Loading Chart</div>}
-            data={[
-              [
-                { type: "string", id: "Name" },
-                { type: "date", id: "Start" },
-                { type: "date", id: "End" },
-              ],
-              ...this.state.tasks.map((t) => [t.name, t.start, t.end]),
-            ]}
+          <ReactApexChart
+            options={this.options}
+            series={tasksToSeries(this.state.tasks)}
+            type="rangeBar"
+            height={700}
           />
         )}
       </div>
