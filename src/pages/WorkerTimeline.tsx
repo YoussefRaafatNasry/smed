@@ -38,6 +38,13 @@ export const WorkerTimeline: React.FC<WorkerTimelineProps> = ({ tasks }) => {
     tooltip: {
       x: { format: "HH:mm:ss" },
     },
+    grid: {
+      xaxis: {
+        lines: {
+          show: true,
+        },
+      },
+    },
   };
 
   return (
