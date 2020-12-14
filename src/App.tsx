@@ -21,10 +21,13 @@ export const App: React.FC = () => {
           (r): Task => ({
             worker: r.data[0],
             id: r.data[1],
-            name: r.data[2],
-            description: r.data[3],
-            start: timeToMs(r.data[4]),
-            end: timeToMs(r.data[5]),
+            name: r.data[2].toLowerCase(),
+            start: timeToMs(r.data[3]),
+            end: timeToMs(r.data[4]),
+            category:
+              r.data[5].trim() === ""
+                ? "un-categorized"
+                : r.data[5].toLowerCase(),
           })
         )
     );

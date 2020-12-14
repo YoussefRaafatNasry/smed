@@ -1,6 +1,9 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
 import ReactApexChart from "react-apexcharts";
+import { CategoriesTags } from "../components/CategoriesTags";
 import { Task } from "../models/Task";
+import { getColorsMap } from "../util/getColorsMap";
 import { groupBy } from "../util/groupBy";
 
 interface WorkerTimelineProps {
@@ -8,13 +11,17 @@ interface WorkerTimelineProps {
 }
 
 export const WorkerTimeline: React.FC<WorkerTimelineProps> = ({ tasks }) => {
+  const categories = Array.from(new Set<string>(tasks.map((t) => t.category)));
+  const colorsMap = getColorsMap(categories);
+
   const groups = groupBy(tasks, "name");
 
-  var series = Array.from(groups, ([name, tasks]) => ({
+  const series = Array.from(groups, ([name, tasks]) => ({
     name,
     data: tasks.map((t) => ({
-      x: t.worker.toString(),
+      x: t.worker,
       y: [t.start, t.end],
+      fillColor: colorsMap.get(t.category),
     })),
   })).sort((a, b) => a.name.localeCompare(b.name));
 
@@ -34,11 +41,14 @@ export const WorkerTimeline: React.FC<WorkerTimelineProps> = ({ tasks }) => {
   };
 
   return (
-    <ReactApexChart
-      height={700}
-      type="rangeBar"
-      series={series}
-      options={options}
-    />
+    <Box>
+      <CategoriesTags colorsMap={colorsMap} />
+      <ReactApexChart
+        height={640}
+        type="rangeBar"
+        series={series}
+        options={options}
+      />
+    </Box>
   );
 };
