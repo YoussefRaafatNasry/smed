@@ -1,13 +1,8 @@
+import { Box, Button, Center, Flex, Heading, Text } from "@chakra-ui/react";
 import React from "react";
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Heading
-} from "@chakra-ui/react";
 import { CSVReader } from "react-papaparse";
 import { Link } from "react-router-dom";
+import { SampleTable } from "../components/SampleTable";
 import { Record } from "../models/Record";
 
 interface DashboardProps {
@@ -22,11 +17,13 @@ export const Dashboard: React.FC<DashboardProps> = ({ handleOnDrop }) => {
 
         <Box my={6}>
           <CSVReader addRemoveButton onDrop={handleOnDrop}>
-            <span>Drop CSV file here.</span>
+            <Text>Drop CSV file here.</Text>
           </CSVReader>
         </Box>
 
-        <Flex>
+        <SampleTable />
+
+        <Center>
           <Link to="/task">
             <Button m={2} colorScheme="pink">
               Task Timeline
@@ -38,7 +35,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ handleOnDrop }) => {
               Worker Timeline
             </Button>
           </Link>
-        </Flex>
+        </Center>
       </Flex>
     </Center>
   );
