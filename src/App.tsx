@@ -6,7 +6,7 @@ import { Task } from "./models/Task";
 import { Dashboard } from "./pages/Dashboard";
 import { TaskTimeline } from "./pages/TaskTimeline";
 import { WorkerTimeline } from "./pages/WorkerTimeline";
-import { strToDate } from "./util/strToDate";
+import { timeToMs } from "./util/timeToMs";
 
 export const App: React.FC = () => {
   const [tasks, setTasks] = React.useState<Task[]>([]);
@@ -20,9 +20,11 @@ export const App: React.FC = () => {
         .map(
           (r): Task => ({
             worker: r.data[0],
+            id: r.data[1],
             name: r.data[2],
-            start: strToDate(r.data[4]),
-            end: strToDate(r.data[5]),
+            description: r.data[3],
+            start: timeToMs(r.data[4]),
+            end: timeToMs(r.data[5]),
           })
         )
     );

@@ -1,6 +1,8 @@
 export interface Task {
   worker: string;
+  id: string;
   name: string;
-  start: Date;
-  end: Date;
+  description: string;
+  start: number;
+  end: number;
 }
