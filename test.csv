@@ -1,0 +1,163 @@
+﻿Worker,Task #,Task Name,Time start,Time end,category
+1,1,Unlock m/c,0:00:00,0:00:14,4
+1,2,Wear gloves,0:00:14,0:00:26,1
+1,3,Get the lifting car to the old roll,0:00:26,0:00:56,4
+1,4,Remove old roll,0:00:56,0:01:00,3
+1,5,Remove old roll,0:01:00,0:01:04,2
+1,6,Remove old roll,0:01:00,0:01:26,4
+1,7,Transporting old to storage,0:01:26,0:02:20,1
+1,8,Searching for the new roll,0:02:20,0:03:10,1
+1,9,Transport new roll to m/c,0:03:10,0:04:22,1
+1,10,Replace new roll,0:04:22,0:05:04,3
+1,11,Replace new roll,0:05:04,0:05:19,2
+1,12,Idle,0:05:19,0:05:55,1
+1,13,Welding old roll to the new roll,0:05:55,0:07:06,3
+1,14,Idle,0:07:06,0:07:19,3
+1,15,Unlock m/c,0:07:19,0:07:30,4
+1,16,Roll setting,0:07:30,0:07:42,4
+1,17,Idle,0:07:42,0:08:08,3
+1,18,Setting expiring date,0:08:08,0:09:22,4
+1,19,Control of machine tape,0:09:22,0:11:09,1
+1,20,Idle,0:11:09,0:11:30,1
+1,21,Adjusting sheet inside the m/c,0:11:30,0:14:56,3
+1,22,Idle,0:14:56,0:15:29,3
+1,23,bring wrench + tightening chassis,0:15:29,0:15:45,4
+1,24,Adjusting sheet inside the m/c,0:15:45,0:15:59,2
+1,25,Revising notes,0:15:59,0:16:24,4
+1,26,inserting chassis,0:16:24,0:17:26,3
+1,27,adjusting knob of the sheet,0:17:26,0:18:10,3
+1,28,Welding,0:18:10,0:18:51,2
+1,29,Idle,0:18:51,0:20:03,3
+1,30,Setting prog of the minis,0:20:03,0:20:22,3
+1,31,Setting prog of the bags,0:20:22,0:21:09,2
+1,32,Setting prog of the box,0:21:09,0:21:29,2
+1,33,Idle,0:21:29,0:23:24,1
+1,34,adjusting rolls & Cutting,0:23:24,0:32:18,2
+1,35,adjusting rolls & Cutting,0:32:18,0:32:40,2
+1,36,adjusting rolls & Cutting,0:32:40,0:32:50,1
+1,37,adjusting rolls & Cutting,0:32:50,0:37:30,4
+1,38,Idle,0:37:30,0:37:48,1
+1,39,Replacing funnel,0:37:48,0:38:16,3
+1,40,Replacing funnel,0:38:16,0:38:47,3
+1,41,transport old tube to storage,0:38:47,0:39:28,4
+1,42,Idle,0:39:28,0:40:04,3
+1,43,Observing & visual check,0:40:04,0:40:40,1
+1,44,Idle,0:40:40,0:44:17,4
+1,45,prepare sheet for tube,0:44:17,0:45:27,4
+1,46,Tightning funnel,0:45:27,0:45:56,2
+1,47,Idle,0:45:56,0:46:28,4
+1,48,tighting cover,0:46:28,0:46:40,1
+1,49,Idle,0:46:40,0:48:49,4
+1,50,unlock the safety key,0:48:49,0:48:56,4
+1,51,Idle,0:48:56,0:50:46,1
+1,52,setting prog of m/c,0:50:46,0:51:12,3
+1,53,Idle,0:51:12,0:53:34,2
+1,54,turn on flash to help other operator,0:53:34,0:54:10,3
+1,55,check & Adjust,0:54:10,0:57:14,2
+1,56,Idle,0:57:14,0:58:14,2
+1,57,Resetting the prog of the m\c,0:58:14,0:59:44,3
+1,58,Idle,0:59:44,1:00:07,1
+1,59,Resetting the prog of the m\c,1:00:07,1:01:07,1
+1,60,Idle,1:01:07,1:07:54,1
+1,61,Adjusting rolls,1:07:54,1:08:30,1
+1,62,Idle,1:08:30,1:10:20,4
+1,63,Adjusting rolls,1:10:20,1:11:20,1
+1,64,prepare sheet for tube and fix it,1:11:20,1:13:00,1
+1,65,Adjusting rolls,1:13:00,1:13:31,2
+1,66,Adjusting sheet into tube,1:13:31,1:14:01,2
+1,67,Idle,1:14:01,1:14:40,2
+1,68,Setting prog minis,1:14:40,1:14:59,2
+1,69,Idle,1:14:59,1:15:51,3
+1,70,Resetting prog of the m\c,1:15:51,1:20:37,2
+1,71,Collecting defect bags,1:20:37,1:20:43,2
+1,72,Adjusting Zipper,1:20:43,1:21:22,3
+1,73,Resetting the prog of the m\c,1:21:22,1:24:59,4
+1,74,Adjusting Rolls,1:24:59,1:25:30,3
+1,75,Collecting defect bags,1:25:30,1:25:58,1
+1,76,Resetting,1:25:58,1:26:35,4
+1,77,Idle,1:26:35,1:27:01,1
+1,78,Turn on the belts,1:27:01,1:27:17,4
+1,79,Setting prog of minis,1:27:17,1:27:29,2
+1,80,Idle,1:27:29,1:28:30,2
+1,81,check the final product,1:28:30,1:28:41,2
+1,82,Adjust rolls,1:28:41,1:28:56,2
+1,83,Resetting prog of the m\c,1:28:56,1:31:05,2
+2,1,idle,0:00:00,0:05:10,3
+2,2,Place the new roll,0:04:48,0:06:54,1
+2,3,Edit the program,0:06:54,0:07:55,2
+2,4,pull the old sheet,0:07:55,0:09:00,2
+2,5,Edit the program,0:09:00,0:09:41,4
+2,6,cut the sheet and take out the old chassis,0:09:41,0:11:36,4
+2,7,idle,0:11:36,0:12:24,4
+2,8,place the chassis on the ground,0:12:24,0:12:59,2
+2,9,adjust the sheet inside the m/c,0:12:59,0:15:03,2
+2,10,assemble the new chassis inside m/c,0:15:03,0:15:33,2
+2,11,get his phone,0:15:33,0:15:56,1
+2,12,adjust the centreline,0:15:56,0:16:30,4
+2,13,adjust the sheet inside the m/c,0:16:30,0:18:32,1
+2,14,weld the sheet inside m/c,0:18:32,0:20:21,2
+2,15,Edit the program,0:20:21,0:21:50,3
+2,16,remove the cover,0:21:50,0:22:24,4
+2,17,adjust the sheet inside the m/c,0:22:24,0:22:53,3
+2,18,search for the sissors,0:22:53,0:23:33,3
+2,19,cut the sheet,0:23:33,0:25:13,2
+2,20,adjust the sheet insidr the m/c,0:25:13,0:26:19,3
+2,21,remove the old tube,0:26:19,0:26:52,1
+2,22,bring the new tube,0:26:52,0:27:28,4
+2,23,assemble the new tube,0:27:28,0:28:04,2
+2,24,cut the sheet for the tube,0:28:04,0:30:14,3
+2,25,adjust the sheet inside the m/c,0:30:14,0:37:18,2
+2,26,remove the funnle,0:37:18,0:37:54,2
+2,27,rolling the sheet,0:37:54,0:38:15,1
+2,28,idle,0:38:15,0:38:45,1
+2,29,assemble the new funnle,0:38:45,0:38:59,1
+2,30,put the cover,0:38:59,0:39:25,3
+2,31,try the program,0:39:25,0:40:03,2
+2,32,idle,0:40:03,0:40:47,3
+2,33,try the program,0:40:47,0:41:09,1
+2,34,adjust the sheet inside the tube,0:41:09,0:42:16,4
+2,35,remove the cover and funnle,0:42:16,0:42:42,3
+2,36,adjust the sheet inside the m/c,0:42:42,0:43:24,1
+2,37,cut the sheet at Area A,0:43:24,0:44:06,3
+2,38,adjust the sheet inside the m/c,0:44:06,0:44:35,
+2,39,idle,0:44:35,0:45:19,1
+2,40,rolling the sheet,0:45:19,0:45:38,3
+2,41,idle,0:45:38,0:46:20,4
+2,42,Adjust the tube,0:46:20,0:49:46,3
+2,43,idle,0:49:46,0:50:01,1
+2,44,try the program,0:50:01,0:51:10,3
+2,45,adjust the sheet inside the m/c,0:51:10,0:52:24,2
+2,46,Idle,0:52:24,0:53:29,3
+2,47,adjust tube inside the m/c,0:53:29,0:54:11,1
+2,48,take helmet off,0:54:11,0:54:25,3
+2,49,idle,0:54:25,0:56:32,3
+2,50,adjust control and observe,0:56:32,0:57:12,1
+2,51,check part at area B,0:57:12,0:57:54,2
+2,52,edit control screen at Area D,0:57:54,0:58:18,2
+2,53,idel,0:58:18,0:59:39,3
+2,54,adjust the sheet inside the m/c,0:59:39,1:00:04,3
+2,55,idel,1:00:04,1:00:46,1
+2,56,observation,1:00:46,1:03:53,1
+2,57,make the correct setup,1:03:53,1:08:30,1
+2,58,take the scrab out of the m/c,1:08:30,1:10:22,1
+2,59,remove the cover,1:10:22,1:10:44,3
+2,60,cut the sheet for the tube,1:10:44,1:11:46,1
+2,61,idle,1:11:46,1:12:15,4
+2,62,insert the sheet in tube,1:12:15,1:14:16,3
+2,63,put the cover and funnle,1:14:16,1:14:42,3
+2,64,try the program,1:14:42,1:17:24,3
+2,65,adjust the sheet inside the m/c,1:17:24,1:17:55,3
+2,66,adjust control and observe,1:17:55,1:19:22,3
+2,67,take the scrab out of the m/c,1:19:22,1:19:45,1
+2,68,try the program,1:19:45,1:20:32,3
+2,69,adjust heater,1:20:32,1:21:00,3
+2,70,idle,1:21:00,1:21:47,2
+2,71,take the scrab out of the m/c,1:21:47,1:23:08,4
+2,72,idle,1:23:08,1:23:39,1
+2,73,adjust heater,1:23:39,1:23:50,4
+2,74,take the scrab out of the m/c,1:23:50,1:24:50,2
+2,75,adjust heater,1:24:50,1:25:05,4
+2,76,idle,1:25:05,1:26:16,1
+2,77,observe at second floor,1:26:16,1:26:59,1
+2,78,adjust backaging line,1:26:59,1:27:44,
+2,79,adjust box tape machine,1:27:44,1:29:41,
